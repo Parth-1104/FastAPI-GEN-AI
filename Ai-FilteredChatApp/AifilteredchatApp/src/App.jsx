@@ -118,7 +118,7 @@ export default function App() {
 
     try {
       // Construct the prompt for the Gemini AI to determine if the message is a relevant question.
-      const prompt = `Given the class topic: "${classContext}", is the following text a question directly related to this topic? Answer only "YES" or "NO". Do not add any other text.
+      const prompt = `Given the class topic: "${classContext}", is the following text a question anyhow related to this topic make sure the text dont contain any abusive language and if any connection of the text to the field of education importantly do not include any sexual comments ? Answer only "YES" or "NO". Do not add any other text.
       Text: "${newMessage}"`;
 
       const chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
@@ -168,7 +168,7 @@ export default function App() {
         classContextUsed: classContext // Store the context used for filtering for debugging/analysis.
       });
       setNewMessage(''); // Clear the input field after sending.
-    } catch (error) {
+    } catch (error) { 
       console.error("Error sending message to Firestore:", error);
     }
   };
@@ -202,12 +202,12 @@ export default function App() {
   <option value="Class 12">Class 12</option>
   <option value="Engineering">Engineering</option>
   <option value="Medical (NEET)">Medical (NEET)</option>
-  <option value="JEE">JEE</option>
+  <option value="Engineering JEE">JEE</option>
   <option value="IAS">IAS</option>
   <option value="Banking">Banking</option>
   <option value="SSC">SSC</option>
   <option value="CA/CS">CA/CS</option>
-  <option value="Coding Bootcamp">Coding Bootcamp</option>
+  <option value="complete coding field Coding Bootcamp">Coding Bootcamp</option>
   <option value="Other">Other</option>
 </select>
 
